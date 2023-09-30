@@ -1,0 +1,3 @@
+[submodule "aliases"]
+	path = aliases
+	url = https://github.com/golxzn/os-aliases.git

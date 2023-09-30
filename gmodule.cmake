@@ -18,7 +18,11 @@ endif()
 
 set(GXZN_GIT_URL https://github.com/golxzn)
 set(${GXZN_NAME}_submodules
-	#subdirectories
+	aliases
+	# memory
+	# threads
+	# network
+	# filesystem
 )
 
 list(FILTER GXZN_DISABLED_MODULES INCLUDE REGEX "^golxzn::os::.*")
