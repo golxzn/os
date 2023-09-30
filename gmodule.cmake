@@ -22,7 +22,7 @@ set(${GXZN_NAME}_submodules
 	# memory
 	# threads
 	# network
-	# filesystem
+	filesystem
 )
 
 list(FILTER GXZN_DISABLED_MODULES INCLUDE REGEX "^golxzn::os::.*")
