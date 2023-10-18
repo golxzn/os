@@ -4,3 +4,6 @@
 [submodule "filesystem"]
 	path = filesystem
 	url = https://github.com/golxzn/filesystem.git
+[submodule "chrono"]
+	path = chrono
+	url = https://github.com/golxzn/os-chrono.git
