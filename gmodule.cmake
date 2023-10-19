@@ -16,11 +16,16 @@ if(DEFINED GXZN_DISABLED_MODULES AND golxzn::os IN_LIST GXZN_DISABLED_MODULES)
 	return()
 endif()
 
+if(NOT (GOLXZN_MULTITHREADING IN_LIST GOLXZN_CONFIG_DEFINITIONS))
+	list(APPEND GOLXZN_CONFIG_DEFINITIONS GOLXZN_MULTITHREADING=1)
+endif()
+
 set(GXZN_GIT_URL https://github.com/golxzn)
 set(${GXZN_NAME}_submodules
 	aliases
-	# memory
 	# threads
+	chrono
+	memory
 	# network
 	filesystem
 )
@@ -58,6 +63,7 @@ foreach(submodule IN LISTS checked_submodules)
 
 	target_compile_definitions(golxzn_${GXZN_NAME} INTERFACE
 		$<TARGET_PROPERTY:golxzn::os::${submodule},INTERFACE_COMPILE_DEFINITIONS>
+		${GOLXZN_CONFIG_DEFINITIONS}
 	)
 endforeach()
 
